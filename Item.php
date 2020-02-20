@@ -5,7 +5,7 @@ class Item{
  //INSERT
     public static function insertUser($nom,$prenom,$mel,$adresse,$tel,$mdp){
         $db = new Database();
-        $mdp= md5($mdp);
+        $mdp= md5($mdp); // to change !
         $sth=$db->prepare('INSERT INTO Utilisateurs (nom,prenom,mel,adresse,tel,mdp) VALUES (:nom,:prenom,:mel,:adresse,:tel,:mdp)');
         $sth->bindParam(':nom',$nom);
         $sth->bindParam(':prenom',$prenom);
